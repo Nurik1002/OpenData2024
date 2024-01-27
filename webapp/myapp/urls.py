@@ -2,6 +2,6 @@ from django.urls import path
 from .views import home, result
 
 urlpatterns = [
-    path("result/", result , name="result"),
-    path("", home, name="home"),    
+    path('', home, name='home'), 
+    path('result/<str:img>/', result, name='result'),      
 ]

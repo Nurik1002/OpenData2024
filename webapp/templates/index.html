@@ -98,7 +98,7 @@
                                 <form action="result/" method="POST" enctype="multipart/form-data">
                                     {% csrf_token %}
                                     <label for="formFile" class="form-label">Upload brain image</label>
-                                    <input class="form-control" type="file" id="formFile" accept="image/*">
+                                    <input class="form-control" type="file" id="formFile" name="file" accept="image/*">
                                     <input class="add-style-btn btn btn-primary" type="submit" value="Submit">
                                 </form>								
 							</div>
