@@ -12,15 +12,20 @@ class UploadFileForm(forms.ModelForm):
 
 
 def home(request):
+    context = {}
     if request.method == 'POST':
-       
-        form = UploadFileForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('result',  {"file":form})  
+       form = UploadFileForm(request.POST, request.FILES)
+       if form.is_valid():
+           img = form.changed_data.get("file")
+           image = Image.objects.create(image=img)
+           obj = image.save()
+           
+           return redirect("result", {"img":"image"})
     else:
+        form = UploadFileForm()
+    context["form"] = form
         
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'index.html', context)
 
 from django.shortcuts import render
 
