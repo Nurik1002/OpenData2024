@@ -1,8 +1,12 @@
 from .predict import load_image, predict
 from django.shortcuts import render
 from django.shortcuts import redirect
+from PIL import Image as IMG
 from .models import Image
 from django.http import Http404
+from django.conf import settings
+import os
+
 
 def home(request):
     context = {}
@@ -11,17 +15,24 @@ def home(request):
         obj = Image(image=uploaded_file) 
         obj.save()
         context["image_url"] = obj.image.url
-        return redirect("result", img=obj.image.url)
+        return redirect("result", pk=obj.id)
+
     else:
         context["image_url"] = None
     return render(request, "index.html", context=context)
 
 
 
-def result(request, img):
+def result(request, pk):
+    context = {}
     try:
-        image_obj = Image.objects.get(image=img)
+        image_obj = Image.objects.get(id=pk)
+        context["image_obj"] = image_obj
+        img = load_image(os.path.join(settings.BASE_DIR, image_obj.image.path))
+        pred = predict(img)
+        context["predict"] = pred
+
     except Image.DoesNotExist:
         raise Http404("Image does not exist")
     
-    return render(request, "result.html", {"image_obj": image_obj})
+    return render(request, "result.html", context)

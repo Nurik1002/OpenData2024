@@ -12,9 +12,12 @@ def load_image(path):
     return img
 
 def predict(image):
+    image = np.asarray(image)
+    image = cv2.resize(image, (224, 224))
     image = image / 255.0  
     pred = model.predict(image)
     predicted_class = classNames[np.argmax(pred)]
     return predicted_class
+
 
 
