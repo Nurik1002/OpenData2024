@@ -105,7 +105,7 @@
 							<p> </p>
 							<div class="mb-3">
 							<div>
-                                <form action="" method="POST">
+                                <form action="" method="POST" enctype="multipart/form-data">
                                     {% csrf_token %}
                                     <label for="formFile" class="form-label">Upload brain image</label>
                                     <input class="form-control" type="file" id="formFile" accept="image/*">
