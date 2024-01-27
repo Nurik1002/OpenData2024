@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -104,9 +105,12 @@
 							<p> </p>
 							<div class="mb-3">
 							<div>
-								<label for="formFile" class="form-label">Upload brain image</label>
-								<input class="form-control" type="file" id="formFile" accept="image/*">
-								<input class="add-style-btn btn btn-primary" type="submit" value="Submit">
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <label for="formFile" class="form-label">Upload brain image</label>
+                                    <input class="form-control" type="file" id="formFile" accept="image/*">
+                                    <input class="add-style-btn btn btn-primary" type="submit" value="Submit">
+                                </form>								
 							</div>
 							</div>
 							
