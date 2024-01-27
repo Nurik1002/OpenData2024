@@ -1,0 +1,17 @@
+import tensorflow as tf
+import numpy as np 
+import cv2
+
+model = tf.keras.models.load_model("./models/braintumorclassidication.h5")
+classNames = ['Glioma', 'Meningioma', 'Pituitary', 'no_tumor']
+
+def load_image(path):
+    img = cv2.imread(path)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    return img
+
+
+def predict(image):
+    image = image/255.0
+    pred = model.predict(image)
+    return classNames[np.argmax(pred)]
