@@ -22,7 +22,8 @@ pip install -r requirements.txt
 To use the `predict.py` script, ensure you have the necessary dependencies installed. You can run the script with the following command:
 
 ```bash
-python predict.py --image_path <path_to_image>```
+python predict.py --image_path <path_to_image>
+```
 
 ## Web application
 To use the web application `webapp` script, ensure you have the necessary dependencies installed. You can run the script with the following command:
