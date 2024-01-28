@@ -1,7 +1,5 @@
 # Brain Tumor Classification
 
-This repository contains code for a brain tumor classification project. It includes a Python script for tumor prediction (`predict.py`) and a web application for interactive tumor classification.
-
 ## Contents
 
 - [Introduction](#introduction)
