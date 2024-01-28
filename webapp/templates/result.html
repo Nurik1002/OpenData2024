@@ -101,8 +101,54 @@
 											Prediction : {{ predict }} {{ foiz }} %
 										</h3>
 										<p>
-											Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspi unde omnis iste natus error sit voluptatem accusantium doloremque lauda ntium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam vo luptatem quia voluptas sit aspernatur aut odit aut fugit,
-										</p>
+											{% if predict  ==  'Glioma' %}
+												Symptoms vary depending on the location and size of the tumor, but can include:
+												Headaches
+												Seizures
+												Nausea and vomiting
+												Vision problems
+												Speech or language difficulties
+												Weakness or numbness
+												Personality changesTreatment:
+
+												Treatment options depend on the type, grade, and location of the glioma. Options may include:
+
+												Surgery
+												Radiation therapy
+												Chemotherapy
+												Targeted therapy
+												Clinical trials
+
+											{% elif predict == 'Meningioma' %}
+												Many meningiomas grow slowly and may not cause any symptoms, especially if they're located in non-critical areas.
+												Symptoms, if present, depend on the tumor's location and size.
+												Common symptoms include headaches, seizures, vision problems, weakness, numbness, and personality changes.
+												Treatment:
+												
+												Treatment options also depend on the tumor's characteristics and individual factors.
+												Often, observation is recommended for slow-growing, benign tumors that don't cause symptoms.
+												For symptomatic or fast-growing tumors, treatment options include:
+												Surgery: to remove the tumor partially or completely
+												Radiation therapy: to target and shrink the tumor
+												Observation with regular monitoring for slow-growing tumors
+											{% elif predict == 'Pituitary' %}
+												Diagnosis and Treatment:
+
+												Diagnosis involves a combination of tests like MRI scans, blood tests to measure hormone levels, and sometimes biopsies. Treatment options depend on the type, size, and aggressiveness of the tumor and may include:
+												
+												Observation: For slow-growing benign tumors with no major symptoms.
+												Surgery: To remove all or part of the tumor.
+												Radiation therapy: For tumors that can't be completely removed or are malignant.
+												Medication: To control hormone levels and address specific symptoms.
+												Remember, this is a general overview. Each case of a pituitary tumor is unique, and it's essential to consult a healthcare professional for diagnosis, treatment, and specific information.
+												
+												I hope this clarifies the different types of brain tumors involving the pituitary gland. Please let me know if you have any further questions or want to explore specific aspects in more detail.
+
+											{% elif predict == "No tumor" %}
+												Healthy. Use the brain.
+											{% endif %}
+											
+										</p> 
 										
 									</div>
 		

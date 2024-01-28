@@ -12,7 +12,7 @@ def load_image(path):
 
 def predict(image):
     model = tf.keras.models.load_model("../models/braintumorclassidication.h5")
-    classNames = ['Glioma', 'Meningioma', 'Pituitary', 'no_tumor']
+    classNames = ['Glioma', 'Meningioma', 'Pituitary', 'No tumor']
     image = np.asarray(image)
     image = cv2.resize(image, (224, 224))
     image = image / 255.0  
