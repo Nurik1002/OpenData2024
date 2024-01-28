@@ -13,10 +13,12 @@ def load_image(path):
     return img
 
 def predict(image):
-    image = image / 255.0  # Normalize pixel values
+    image = image / 255.0  
+    image = cv2.resize(image, (224, 224))
+    image = np.expand_dims(image, axis=0)  
     pred = model.predict(image)
     predicted_class = classNames[np.argmax(pred)]
-    return predicted_class
+    return predicted_class, pred[np.argmax(pred)]
 
 # Create an argument parser
 parser = argparse.ArgumentParser(description="Brain Tumor Classification")

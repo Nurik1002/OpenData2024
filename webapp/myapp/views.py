@@ -29,8 +29,9 @@ def result(request, pk):
         image_obj = Image.objects.get(id=pk)
         context["image_obj"] = image_obj
         img = load_image(os.path.join(settings.BASE_DIR, image_obj.image.path))
-        pred = predict(img)
+        pred, foiz = predict(img)
         context["predict"] = pred
+        context["foiz"] = foiz
 
     except Image.DoesNotExist:
         raise Http404("Image does not exist")

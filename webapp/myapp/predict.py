@@ -3,8 +3,7 @@ import numpy as np
 import cv2
 
 
-model = tf.keras.models.load_model("../models/braintumorclassidication.h5")
-classNames = ['Glioma', 'Meningioma', 'Pituitary', 'no_tumor']
+
 
 def load_image(path):
     img = cv2.imread(path)
@@ -12,12 +11,16 @@ def load_image(path):
     return img
 
 def predict(image):
+    model = tf.keras.models.load_model("../models/braintumorclassidication.h5")
+    classNames = ['Glioma', 'Meningioma', 'Pituitary', 'no_tumor']
     image = np.asarray(image)
     image = cv2.resize(image, (224, 224))
     image = image / 255.0  
+    image = np.expand_dims(image, axis=0)  
     pred = model.predict(image)
-    predicted_class = classNames[np.argmax(pred)]
-    return predicted_class
+    i = np.argmax(pred)
+    predicted_class = classNames[i]
+    return (predicted_class, pred[i])
 
 
 
