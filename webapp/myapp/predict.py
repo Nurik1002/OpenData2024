@@ -18,9 +18,7 @@ def predict(image):
     image = image / 255.0  
     image = np.expand_dims(image, axis=0)  
     pred = model.predict(image)
-    i = np.argmax(pred)
-    predicted_class = classNames[i]
-    return (predicted_class, pred[i])
-
+    tumor = classNames[np.argmax(pred[0])]
+    return (tumor, pred[0][np.argmax(pred[0])])
 
 
