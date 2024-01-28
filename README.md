@@ -3,12 +3,16 @@
 ## Contents
 
 - [Introduction](#introduction)
+- [Dataset](#dataset)
 - [Usage](#usage)
 - [Web Application](#web-application)
 
 ## Introduction
 
-The goal of this project is to classify brain tumors using deep learning techniques. The `predict.py` script utilizes a trained model to predict the presence of a brain tumor based on input images. Imagine a medical world where diagnostic imaging not only captures detailed images of the human body but also harnesses the power of Artificial Intelligence to provide more accurate and efficient diagnoses. This vision is becoming a reality through the convergence of medical imaging and AI technologies.  AI with MRI and CT scans is revolutionizing the field of medical imaging. This synergy between technology and healthcare not only improves diagnostic accuracy but also accelerates the pace of diagnosis, ultimately leading to better patient outcomes.
+The goal of this project is to classify brain tumors using deep learning techniques. The `predict.py` script utilizes a trained model to predict the presence of a brain tumor based on input images. Imagine a medical world where diagnostic imaging not only captures detailed images of the human body but also harnesses the power of Artificial Intelligence to provide more accurate and efficient diagnoses. This vision is becoming a reality through the convergence of medical imaging and AI technologies.  AI with MRI and CT scans is revolutionizing the field of medical imaging. This synergy between technology and healthcare not only improves diagnostic accuracy but also accelerates the pace of diagnosis, ultimately leading to better patient outcomes. 
+
+## Dataset
+https://www.kaggle.com/datasets/shadyeldakrory/shadyfinal3/
 
 
 ## Usage
