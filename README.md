@@ -28,6 +28,7 @@ python predict.py --image_path <path_to_image>
 ## Web application
 To use the web application `webapp` script, ensure you have the necessary dependencies installed. You can run the script with the following command:
 
-```bash python3 webapp/manage.py runserver
+```bash
+python3 webapp/manage.py runserver
 ```
 
